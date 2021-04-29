@@ -12,6 +12,11 @@ namespace UserRegistration
         {
 
             Console.WriteLine("Welcome to User registration using unit testing!");
+            Validation regex = new Validation();
+            Console.WriteLine("Enter your Mobile Number with country code:");
+            string name = Console.ReadLine();
+            bool result = regex.ValidateMobileNumber(name);
+            Console.WriteLine("MobileNumber: " + result);
         }
     }
 }
