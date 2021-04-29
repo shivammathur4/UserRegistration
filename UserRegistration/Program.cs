@@ -12,6 +12,13 @@ namespace UserRegistration
         {
 
             Console.WriteLine("Welcome to User registration using unit testing!");
+            Validation regex = new Validation();
+            Console.WriteLine("Enter your name:");
+            string name = Console.ReadLine();
+            bool result = regex.ValidateName(name);
+            Console.WriteLine("Name: " + result);
+
         }
+
     }
 }
