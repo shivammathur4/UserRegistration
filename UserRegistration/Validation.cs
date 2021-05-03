@@ -18,28 +18,81 @@ namespace UserRegistration
 
         public bool ValidateFirstName(string name1)
         {
-            return Regex.IsMatch(name1, FIRSTNAME_REGEX);
+
+            if (Regex.IsMatch(name1, FIRSTNAME_REGEX))
+            {
+                return true;
+            }
+            else
+            {
+                throw new CustomException(CustomException.ExceptionType.INVALID_FIRST_NAME, "Invalid first name.");
+            }
         }
         public bool ValidateLastName(string name2)
         {
-            return Regex.IsMatch(name2, LASTNAME_REGEX);
+            if (Regex.IsMatch(name2, LASTNAME_REGEX))
+            {
+                return true;
+            }
+            else
+            {
+                throw new CustomException(CustomException.ExceptionType.INVALID_LAST_NAME, "Invalid last name.");
+            }
         }
         public bool ValidateEmail(string name3)
         {
-            return Regex.IsMatch(name3, EMAIL_REGEX);
+            if (Regex.IsMatch(name3, EMAIL_REGEX))
+            {
+                return true;
+            }
+            else
+            {
+                throw new CustomException(CustomException.ExceptionType.INVALID_EMAIL, "Invalid email address.");
+            }
         }
         public bool ValidateMobileNumber(string name4)
         {
-            return Regex.IsMatch(name4, MOBILE_REGEX);
+            if (Regex.IsMatch(name4, MOBILE_REGEX))
+            {
+                return true;
+            }
+            else
+            {
+                throw new CustomException(CustomException.ExceptionType.INVALID_MOBILENO, "Invalid mobile no.");
+            }
         }
         public bool ValidatePassword(string name5)
         {
-            return Regex.IsMatch(name5, PASSWORD4_REGEX);
+            if (Regex.IsMatch(name5, PASSWORD4_REGEX))
+            {
+                return true;
+            }
+            else
+            {
+                throw new CustomException(CustomException.ExceptionType.INVALID_PASSWORD, "Invalid password.");
+            }
         }
-
         public bool ValidateEmailSample(string name6)
         {
-            return Regex.IsMatch(name6, EMAILSAMPLE_REGEX);
+            if (Regex.IsMatch(name6, EMAILSAMPLE_REGEX))
+            {
+                return true;
+            }
+            else
+            {
+                throw new CustomException(CustomException.ExceptionType.INVALID_EMAIL, "Invalid email address.");
+            }
+        }
+        public void PrintResult(bool result)
+        {
+            if (result)
+            {
+                Console.WriteLine("Valid.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid.");
+            }
         }
     }
 }
